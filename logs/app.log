@@ -1,0 +1,8 @@
+2020-04-04 15:23:23,419 INFO c.t.h.TechnocratApplication [restartedMain] Starting TechnocratApplication on MSI with PID 6920 (D:\WorkSpace\hackathon-lti\technocrat\target\classes started by vikas in D:\WorkSpace\hackathon-lti\technocrat)
+2020-04-04 15:23:23,426 DEBUG c.t.h.TechnocratApplication [restartedMain] Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-04-04 15:23:23,427 INFO c.t.h.TechnocratApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-04-04 15:23:25,147 INFO c.t.h.TechnocratApplication [restartedMain] Started TechnocratApplication in 1.993 seconds (JVM running for 3.214)
+2020-04-04 15:31:20,419 INFO c.t.h.TechnocratApplication [restartedMain] Starting TechnocratApplication on MSI with PID 16824 (D:\WorkSpace\hackathon-lti\technocrat\target\classes started by vikas in D:\WorkSpace\hackathon-lti\technocrat)
+2020-04-04 15:31:20,427 DEBUG c.t.h.TechnocratApplication [restartedMain] Running with Spring Boot v2.2.6.RELEASE, Spring v5.2.5.RELEASE
+2020-04-04 15:31:20,427 INFO c.t.h.TechnocratApplication [restartedMain] No active profile set, falling back to default profiles: default
+2020-04-04 15:31:22,213 INFO c.t.h.TechnocratApplication [restartedMain] Started TechnocratApplication in 2.059 seconds (JVM running for 3.313)
