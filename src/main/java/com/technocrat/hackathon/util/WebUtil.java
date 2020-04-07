@@ -7,11 +7,10 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.ResourceAccessException;
-import org.springframework.web.client.ResponseErrorHandler;
 import org.springframework.web.client.RestTemplate;
 
 import javax.inject.Inject;
+import java.util.List;
 
 /**
  * Created by vikas on 04-04-2020.
@@ -51,5 +50,11 @@ public class WebUtil<T,V> {
                 entity, genericClass);
         setStatusCode(response.getStatusCode().value());
         return response.getBody();
+    }
+
+    public String generatePathVariableUrl(String mainUrl, List<String> pathVariableToAppend){
+        StringBuilder str = new StringBuilder(mainUrl.trim());
+        pathVariableToAppend.forEach(t->str.append(t.trim()).append("/"));
+        return str.toString();
     }
 }
