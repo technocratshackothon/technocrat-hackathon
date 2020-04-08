@@ -10,6 +10,4 @@ public class ReleaseReport {
 	String projectName;
 	String version;
 	List<Story> storyList;
-	List<Defect> defectList;
-	
 }

@@ -1,0 +1,471 @@
+{
+  "projectName": "cai",
+  "version": "april_2020_01",
+  "storyList": [
+    {
+      "storyId": "ONEFDP-6574",
+      "status": "CLOSED",
+      "points": 5,
+      "defectList": [
+        {
+          "defectId": "ONEFDP-9234",
+          "status": "CLOSED",
+          "severity": "MEDIUM",
+          "priority": "P1",
+          "points": 13
+        },
+        {
+          "defectId": "ONEFDP-9364",
+          "status": "CLOSED",
+          "severity": "HIGH",
+          "priority": "P2",
+          "points": 2
+        },
+        {
+          "defectId": "ONEFDP-9234",
+          "status": "CLOSED",
+          "severity": "MEDIUM",
+          "priority": "P1",
+          "points": 13
+        },
+        {
+          "defectId": "ONEFDP-9964",
+          "status": "CLOSED",
+          "severity": "HIGH",
+          "priority": "P3",
+          "points": 3
+        },
+        {
+          "defectId": "ONEFDP-9344",
+          "status": "CLOSED",
+          "severity": "LOW",
+          "priority": "P1",
+          "points": 8
+        },
+        {
+          "defectId": "ONEFDP-9664",
+          "status": "CLOSED",
+          "severity": "HIGH",
+          "priority": "P3",
+          "points": 1
+        }
+      ],
+      "testCaseList": [
+        {
+          "testCaseId": "ONEFDP-9999",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-9999",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-9991",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-9992",
+          "executionStatus": "PENDING"
+        },
+        {
+          "testCaseId": "ONEFDP-9994",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-9993",
+          "executionStatus": "PENDING"
+        },
+        {
+          "testCaseId": "ONEFDP-9995",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-9199",
+          "executionStatus": "PENDING"
+        },
+        {
+          "testCaseId": "ONEFDP-9996",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-9299",
+          "executionStatus": "PENDING"
+        },
+        {
+          "testCaseId": "ONEFDP-9997",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-9399",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-9998",
+          "executionStatus": "FAILED"
+        },
+        {
+          "testCaseId": "ONEFDP-9499",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-1999",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-9599",
+          "executionStatus": "NOT_EXECUTED"
+        },
+        {
+          "testCaseId": "ONEFDP-2999",
+          "executionStatus": "NOT_EXECUTED"
+        },
+        {
+          "testCaseId": "ONEFDP-9699",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-3999",
+          "executionStatus": "NOT_EXECUTED"
+        },
+        {
+          "testCaseId": "ONEFDP-9799",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-4999",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-9899",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-5999",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-9099",
+          "executionStatus": "FAILED"
+        },
+        {
+          "testCaseId": "ONEFDP-6999",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-5599",
+          "executionStatus": "PASSED"
+        }
+      ]
+    },
+    {
+      "storyId": "ONEFDP-9575",
+      "status": "CLOSED",
+      "points": 8,
+      "defectList": [
+        {
+          "defectId": "ONEFDP-51234",
+          "status": "CLOSED",
+          "severity": "MEDIUM",
+          "priority": "P1",
+          "points": 13
+        },
+        {
+          "defectId": "ONEFDP-57364",
+          "status": "CLOSED",
+          "severity": "HIGH",
+          "priority": "P2",
+          "points": 2
+        },
+        {
+          "defectId": "ONEFDP-51234",
+          "status": "CLOSED",
+          "severity": "MEDIUM",
+          "priority": "P1",
+          "points": 13
+        },
+        {
+          "defectId": "ONEFDP-51964",
+          "status": "CLOSED",
+          "severity": "HIGH",
+          "priority": "P3",
+          "points": 3
+        },
+        {
+          "defectId": "ONEFDP-53344",
+          "status": "CLOSED",
+          "severity": "LOW",
+          "priority": "P1",
+          "points": 8
+        },
+        {
+          "defectId": "ONEFDP-55664",
+          "status": "CLOSED",
+          "severity": "HIGH",
+          "priority": "P3",
+          "points": 1
+        }
+      ],
+      "testCaseList": [
+        {
+          "testCaseId": "ONEFDP-8888",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-8888",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-8881",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-8882",
+          "executionStatus": "PENDING"
+        },
+        {
+          "testCaseId": "ONEFDP-8884",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-8883",
+          "executionStatus": "PENDING"
+        },
+        {
+          "testCaseId": "ONEFDP-8885",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-8188",
+          "executionStatus": "PENDING"
+        },
+        {
+          "testCaseId": "ONEFDP-8886",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-8288",
+          "executionStatus": "PENDING"
+        },
+        {
+          "testCaseId": "ONEFDP-8887",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-8388",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-8888",
+          "executionStatus": "FAILED"
+        },
+        {
+          "testCaseId": "ONEFDP-8488",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-1888",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-8588",
+          "executionStatus": "NOT_EXECUTED"
+        },
+        {
+          "testCaseId": "ONEFDP-2888",
+          "executionStatus": "NOT_EXECUTED"
+        },
+        {
+          "testCaseId": "ONEFDP-8688",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-3888",
+          "executionStatus": "NOT_EXECUTED"
+        },
+        {
+          "testCaseId": "ONEFDP-8788",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-4888",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-8888",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-5888",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-8088",
+          "executionStatus": "FAILED"
+        },
+        {
+          "testCaseId": "ONEFDP-6888",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-5588",
+          "executionStatus": "PASSED"
+        }
+      ]
+    },
+    {
+      "storyId": "ONEFDP-6774",
+      "status": "OPEN",
+      "points": 3,
+      "defectList": [
+        {
+          "defectId": "ONEFDP-61234",
+          "status": "CLOSED",
+          "severity": "MEDIUM",
+          "priority": "P1",
+          "points": 13
+        },
+        {
+          "defectId": "ONEFDP-67364",
+          "status": "OPEN",
+          "severity": "HIGH",
+          "priority": "P2",
+          "points": 2
+        },
+        {
+          "defectId": "ONEFDP-61234",
+          "status": "CLOSED",
+          "severity": "MEDIUM",
+          "priority": "P1",
+          "points": 13
+        },
+        {
+          "defectId": "ONEFDP-61964",
+          "status": "CLOSED",
+          "severity": "HIGH",
+          "priority": "P3",
+          "points": 3
+        },
+        {
+          "defectId": "ONEFDP-63344",
+          "status": "CLOSED",
+          "severity": "LOW",
+          "priority": "P1",
+          "points": 8
+        },
+        {
+          "defectId": "ONEFDP-65664",
+          "status": "OPEN",
+          "severity": "HIGH",
+          "priority": "P3",
+          "points": 1
+        }
+      ],
+      "testCaseList": [
+        {
+          "testCaseId": "ONEFDP-7777",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-7777",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-7771",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-7772",
+          "executionStatus": "PENDING"
+        },
+        {
+          "testCaseId": "ONEFDP-7774",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-7773",
+          "executionStatus": "PENDING"
+        },
+        {
+          "testCaseId": "ONEFDP-7775",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-7177",
+          "executionStatus": "PENDING"
+        },
+        {
+          "testCaseId": "ONEFDP-7776",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-7277",
+          "executionStatus": "PENDING"
+        },
+        {
+          "testCaseId": "ONEFDP-7777",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-7377",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-7777",
+          "executionStatus": "FAILED"
+        },
+        {
+          "testCaseId": "ONEFDP-7477",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-1777",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-7577",
+          "executionStatus": "NOT_EXECUTED"
+        },
+        {
+          "testCaseId": "ONEFDP-2777",
+          "executionStatus": "NOT_EXECUTED"
+        },
+        {
+          "testCaseId": "ONEFDP-7677",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-3777",
+          "executionStatus": "NOT_EXECUTED"
+        },
+        {
+          "testCaseId": "ONEFDP-7777",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-4777",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-7777",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-5777",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-7077",
+          "executionStatus": "FAILED"
+        },
+        {
+          "testCaseId": "ONEFDP-6777",
+          "executionStatus": "PASSED"
+        },
+        {
+          "testCaseId": "ONEFDP-5577",
+          "executionStatus": "PASSED"
+        }
+      ]
+    }
+  ]
+}

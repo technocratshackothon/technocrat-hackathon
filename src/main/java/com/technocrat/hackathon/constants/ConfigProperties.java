@@ -5,7 +5,9 @@ package com.technocrat.hackathon.constants;
  */
 public enum ConfigProperties {
     jira_simulator_url_releasereport("jira.simulator.url.releasereport"),
-    jira_simulator_url_supported_project("jira.simulator.url.supported.project");
+    jira_simulator_url_supported_project("jira.simulator.url.supported.project"),
+    jira_simulator_url_supported_releases_support("jira.simulator.url.supported.releases.support");
+
 
     private final String configProperty;
 
