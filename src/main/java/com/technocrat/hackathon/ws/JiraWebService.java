@@ -1,7 +1,7 @@
 package com.technocrat.hackathon.ws;
 
-import com.technocrat.hackathon.JiraService;
-import com.technocrat.hackathon.UiResponse;
+import com.technocrat.hackathon.model.UiResponse;
+import com.technocrat.hackathon.service.JiraService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,51 +27,31 @@ public class JiraWebService {
 
 
     @GetMapping(value = "/fetch-release-report/{projectname}/{releaseversion}")
-    public ResponseEntity<UiResponse> fetchReleaseReport(@PathVariable String projectname, @PathVariable String releaseversion){
-            UiResponse uiResponse = new UiResponse();
-            try{
-                uiResponse = jiraService.fetchStatisticsFromJiraForProjectNameAndReleaseVersion(projectname,releaseversion);
-                uiResponse.setStatusCode(HttpStatus.OK.value());
-                uiResponse.setStatusMessage(HttpStatus.OK.getReasonPhrase());
-                return new ResponseEntity<>(uiResponse,HttpStatus.OK);
-            }catch(Exception e){
-                uiResponse.setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
-                uiResponse.setStatusMessage(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase());
-                log.error("Error in fetchReleaseReport with",e);
-                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-            }
-    }
+    public ResponseEntity<UiResponse> fetchReleaseReport(@PathVariable String projectname, @PathVariable String releaseversion) {
+        UiResponse uiResponse = new UiResponse();
+        try {
+            uiResponse = jiraService.fetchStatisticsFromJiraForProjectNameAndReleaseVersion(projectname,releaseversion);
+            return new ResponseEntity<>(uiResponse, HttpStatus.OK);
+        } catch (Exception e) {
 
-
-    @GetMapping(value = "/fetch-supported-project")
-    public ResponseEntity<?> fetchProject(){
-            UiResponse uiResponse = new UiResponse();
-        try{
-            uiResponse = jiraService.fetchSupportedProjects();
-            uiResponse.setStatusCode(HttpStatus.OK.value());
-            uiResponse.setStatusMessage(HttpStatus.OK.getReasonPhrase());
-            return new ResponseEntity<>(uiResponse,HttpStatus.OK);
-        }catch(Exception e){
-            uiResponse.setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
-            uiResponse.setStatusMessage(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase());
-            log.error("Error in fetchProject with",e);
+            log.error("Error in fetchReleaseReport with", e);
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
 
-    @GetMapping(value = "/fetch-releases-supported/{projectname}")
-    public ResponseEntity<?> fetchReleasesSupported(@PathVariable String projectname){
+    @GetMapping(value = "/fetch-supported-project")
+    public ResponseEntity<?> fetchProject() {
         UiResponse uiResponse = new UiResponse();
-        try{
-            uiResponse = jiraService.fetchReleasesSupported(projectname);
+        try {
+            uiResponse = jiraService.fetchSupportedProjects();
             uiResponse.setStatusCode(HttpStatus.OK.value());
             uiResponse.setStatusMessage(HttpStatus.OK.getReasonPhrase());
-            return new ResponseEntity<>(uiResponse,HttpStatus.OK);
-        }catch(Exception e){
+            return new ResponseEntity<>(uiResponse, HttpStatus.OK);
+        } catch (Exception e) {
             uiResponse.setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
             uiResponse.setStatusMessage(HttpStatus.INTERNAL_SERVER_ERROR.getReasonPhrase());
-            log.error("Error in fetchProject with",e);
+            log.error("Error in fetchProject with", e);
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }

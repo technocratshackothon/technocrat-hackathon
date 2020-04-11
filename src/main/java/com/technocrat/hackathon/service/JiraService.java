@@ -1,7 +1,9 @@
-package com.technocrat.hackathon;
+package com.technocrat.hackathon.service;
 
 import com.technocrat.hackathon.constants.ConfigProperties;
+import com.technocrat.hackathon.model.Application;
 import com.technocrat.hackathon.model.ReleaseReport;
+import com.technocrat.hackathon.model.UiResponse;
 import com.technocrat.hackathon.util.BuildConfidenceUtil;
 import com.technocrat.hackathon.util.WebUtil;
 import org.springframework.core.env.Environment;
@@ -30,29 +32,18 @@ public class JiraService {
         ReleaseReport releaseReport = (ReleaseReport) webUtil.execute(
                 releaseReportUrl
                 , "", ReleaseReport.class, HttpMethod.GET);
-        UiResponse uiResponse = UiResponse.builder().confidenceIndex(BuildConfidenceUtil.fetchConfidenceIndex(releaseReport)).build();
+        String confidenceRate = BuildConfidenceUtil.fetchConfidenceIndex(releaseReport);
+        UiResponse uiResponse = UiResponse.builder().confidencePercentage(Integer.parseInt(confidenceRate)).build();
         return uiResponse;
     }
 
     public UiResponse fetchSupportedProjects() throws Exception {
-        List<String> projectNames = (List<String>) webUtil.execute(
+        List<Application> projectNames = (List<Application>) webUtil.execute(
                 env.getProperty(ConfigProperties.jira_simulator_url_supported_project.getConfigProperty())
                 , "", List.class, HttpMethod.GET);
-        UiResponse uiResponse = UiResponse.builder().dataArray(projectNames).build();
+        UiResponse uiResponse = UiResponse.builder().applicationList(projectNames).build();
         return uiResponse;
 
     }
-
-    public UiResponse fetchReleasesSupported(String projectname) throws Exception {
-        String releasesSupportedUrl = webUtil.generatePathVariableUrl(env.getProperty(ConfigProperties.jira_simulator_url_supported_releases_support.getConfigProperty()),
-                Arrays.asList(projectname));
-        List<String> releasesSupported = (List<String>) webUtil.execute(
-                releasesSupportedUrl
-                , "", List.class, HttpMethod.GET);
-        UiResponse uiResponse = UiResponse.builder().dataArray(releasesSupported).build();
-        return uiResponse;
-
-    }
-
 
 }

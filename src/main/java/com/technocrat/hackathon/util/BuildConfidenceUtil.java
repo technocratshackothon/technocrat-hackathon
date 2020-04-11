@@ -158,7 +158,7 @@ public class BuildConfidenceUtil {
             int totalStoriesPassed = (int)testCases.stream()
                     .filter(testStory->testStory.getExecutionStatus() == ExecutionStatus.PASSED)
                     .count();
-            String matrixConfig = testConfiguaration.getCategorization(NumberUtil.getPerc(totalStoriesPassed,totalStories));
+            String matrixConfig = testConfiguaration.getCategorization(NumberUtil.getPerc(totalStories,totalStoriesPassed));
             if(mapMatrix.containsKey(matrixConfig)){
                 mapMatrix.put(matrixConfig,mapMatrix.get(matrixConfig) + 1);
             }

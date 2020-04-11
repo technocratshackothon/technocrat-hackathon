@@ -1,12 +1,12 @@
-package com.technocrat.hackathon;
+package com.technocrat.hackathon.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by vikas on 08-04-2020.
@@ -21,11 +21,12 @@ public class UiResponse {
 
     private String statusMessage;
 
-    private String confidenceIndex;
+    private int confidencePercentage;
 
-    private List<HashMap<String, String>> dataNested;
+    private Boolean currentRelease;
 
-    private List<String> dataArray;
+    private List<Application> applicationList;
 
+    private List<Map<String,List<Map<String,Object>>>> barChartData;
 
 }
