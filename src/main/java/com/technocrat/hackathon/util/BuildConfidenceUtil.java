@@ -146,6 +146,7 @@ public class BuildConfidenceUtil {
 
     public static String fetchConfidenceIndex(ReleaseReport releaseReport){
         if(releaseReport!=null && releaseReport.getStoryList() !=null && releaseReport.getStoryList().size() >0){
+            listOfMapOfParameterAndConfidence = new ArrayList<>();
             Map<String,Integer> mapMatrix = getBuildConfidenceMatrix();
             List<TestCase> testCaseList = releaseReport.getStoryList().stream().map(Story::getTestCaseList).flatMap(
                     test->test.stream()).collect(Collectors.toList());
