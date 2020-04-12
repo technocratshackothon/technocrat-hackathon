@@ -1,7 +1,6 @@
 package com.technocrat.hackathon.util;
 
 import com.technocrat.hackathon.config.ConfigTest;
-import jdk.nashorn.internal.runtime.regexp.joni.Config;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.http.HttpMethod;
@@ -25,7 +24,6 @@ public class WebUtilTest {
     @Inject
     private WebUtil<String,String> webUtil;
 
-
     @Test
     public void webUtilExecute_getShouldSucceed() throws Exception{
         //given
@@ -37,4 +35,5 @@ public class WebUtilTest {
         //then
         assertThat(webUtil.getStatusCode(),equalTo(200));
     }
+
 }

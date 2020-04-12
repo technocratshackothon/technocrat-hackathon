@@ -25,6 +25,11 @@ import java.util.stream.Stream;
  */
 public class BuildConfidenceUtil {
 
+    public static Map<String,Object> mapOfParameterAndConfidence = new HashMap<>();
+
+    {
+        this.mapOfParameterAndConfidence = new HashMap<>();
+    }
 
     enum OverallConfidenceIndex {
         CONFIDENT(100),CONFIDENT_WORRIED(75),WORRIED(50)
@@ -41,11 +46,16 @@ public class BuildConfidenceUtil {
         }
     }
 
+    enum Categories{
+        DELVIERY,TEST_COVERAGE,DEFECTS
+    }
+
     enum ConfidenceCategorizationMatrixIdentifier{
         DELIVERY_CONFIDENT,DELIVERY_WORRIED,DELIVERY_PESSIMISTIC,
         TESTCOVERAGE_CONFIDENT,TESTCOVERAGE_WORRIED,TESTCOVERAGE_PESSIMISTIC,
         DEFECTS_CONFIDENT,DEFECTS_WORRIED,DEFECTS_PESSIMISTIC
     }
+
 
     public static Map<String,Integer> getBuildConfidenceMatrix(){
         final Map<String,Integer> mapMatrix = new HashMap<>();
@@ -84,6 +94,7 @@ public class BuildConfidenceUtil {
         int openDefects = (int)defectList.stream().filter(defect -> defect.getStatus() == Status.OPEN).count();
         int openDefectsAndLowPriority = (int)defectList.stream().filter(defect -> defect.getSeverity() == Severity.LOW && defect.getStatus() == Status.OPEN).count();
         int openDefectsCritical = (int)defectList.stream().filter(defect -> defect.getSeverity() == Severity.HIGH && defect.getStatus() == Status.OPEN).count();
+        mapOfParameterAndConfidence.put(Categories.DEFECTS.name(),NumberUtil.getPerc(openDefects,defectList.size()));
         if(openDefects == 0){
             return ConfidenceCategorizationMatrixIdentifier.DEFECTS_CONFIDENT.name();
         }else if(openDefectsAndLowPriority > 0){
@@ -146,7 +157,8 @@ public class BuildConfidenceUtil {
         int totalDeliverables = storyList.stream().map(Story::getPoints)
                 .reduce(0,(a,b) -> a+b);
         int totalCompleted = storyList.stream().filter(story->story.getStatus() == Status.CLOSED).map(Story::getPoints).reduce(0,(a,b) -> a+b);
-        String matrixConfig = deliverableCategorization.getCategorization(NumberUtil.getPerc(totalDeliverables,totalCompleted));
+        String matrixConfig = deliverableCategorization.getCategorization(NumberUtil.getPerc(totalCompleted,totalDeliverables));
+        mapOfParameterAndConfidence.put(Categories.DELVIERY.name(),NumberUtil.getPerc(totalCompleted,totalDeliverables));
         if(mapMatrix.containsKey(matrixConfig)){
             mapMatrix.put(matrixConfig,mapMatrix.get(matrixConfig) + 1);
         }
@@ -158,7 +170,8 @@ public class BuildConfidenceUtil {
             int totalStoriesPassed = (int)testCases.stream()
                     .filter(testStory->testStory.getExecutionStatus() == ExecutionStatus.PASSED)
                     .count();
-            String matrixConfig = testConfiguaration.getCategorization(NumberUtil.getPerc(totalStories,totalStoriesPassed));
+            String matrixConfig = testConfiguaration.getCategorization(NumberUtil.getPerc(totalStoriesPassed,totalStories));
+            mapOfParameterAndConfidence.put(Categories.TEST_COVERAGE.name(),NumberUtil.getPerc(totalStoriesPassed,totalStories));
             if(mapMatrix.containsKey(matrixConfig)){
                 mapMatrix.put(matrixConfig,mapMatrix.get(matrixConfig) + 1);
             }

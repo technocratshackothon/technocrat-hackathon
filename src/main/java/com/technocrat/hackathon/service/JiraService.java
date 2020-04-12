@@ -12,7 +12,9 @@ import org.springframework.stereotype.Service;
 
 import javax.inject.Inject;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by vikas on 08-04-2020.
@@ -33,7 +35,18 @@ public class JiraService {
                 releaseReportUrl
                 , "", ReleaseReport.class, HttpMethod.GET);
         String confidenceRate = BuildConfidenceUtil.fetchConfidenceIndex(releaseReport);
-        UiResponse uiResponse = UiResponse.builder().confidencePercentage(Integer.parseInt(confidenceRate)).build();
+        Map<String,Object> confidenceMap = BuildConfidenceUtil.mapOfParameterAndConfidence;
+        List<Map<String,List<Map<String,Object>>>> barChartData =
+        Arrays.asList(
+
+                new HashMap<String,List<Map<String,Object>>>(){{
+                    put("seriesA",Arrays.asList(
+                            BuildConfidenceUtil.mapOfParameterAndConfidence
+                    ));
+                }}
+
+        );
+        UiResponse uiResponse = UiResponse.builder().confidencePercentage(Integer.parseInt(confidenceRate)).barChartData(barChartData).build();
         return uiResponse;
     }
 

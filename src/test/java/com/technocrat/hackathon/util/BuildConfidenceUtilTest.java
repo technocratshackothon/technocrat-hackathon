@@ -1,9 +1,7 @@
 package com.technocrat.hackathon.util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.technocrat.hackathon.model.Application;
 import com.technocrat.hackathon.model.ReleaseReport;
-import com.technocrat.hackathon.model.UiResponse;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -43,33 +41,30 @@ public class BuildConfidenceUtilTest {
 
     @Test
     public void sampleTest() throws Exception{
-        Map<String,String> m = new HashMap<>();
-        List<Map<String,String>> releasesAvailable = new ArrayList<>();
-        m.put("releaseName","August_RELEASE");
-        releasesAvailable.add(m);
-        m.clear();
-        m.put("releaseName","September_RELEASE");
-        releasesAvailable.add(m);
-        Application app = Application.builder().name("DMSP").releasesAvailable(releasesAvailable).build();
-        m.clear();
-        //Bar chart generation
-        List<Map<String,Object>> nestedBar = new ArrayList<>();
-        Map<String,Object> barMap = new HashMap<>();
-        releasesAvailable.clear();
-        barMap.put("key","2006");
-        barMap.put("value",32);
-        nestedBar.add(barMap);
-        barMap.clear();
-        barMap.put("key","2007");
-        barMap.put("value",30);
-        nestedBar.add(barMap);
-        Map<String,List<Map<String,Object>>> s = new HashMap<>();
-        s.put("seriesA",nestedBar);
-        //end
-        UiResponse u = UiResponse.builder().confidencePercentage(69).currentRelease(false).applicationList(Arrays.asList(app)).barChartData(Arrays.asList(s)).build();
-        String res = objectMapper.writeValueAsString(u);
+        List<Map<String,List<Map<String,Object>>>> barChartData = new ArrayList<>();
+        Map<String,List<Map<String,Object>>> barMap = new HashMap<>();
+        List<Map<String,Object>> barMapList = new ArrayList<>();
+        Map<String,Object> map = new HashMap<>();
 
-        System.out.println(res);
+        map.put("Delivery",80);
+        map.put("Test Converage",60);
+        map.put("Defects",100);
+        barMapList.add(map);
+        barMap.put("seriesA",barMapList);
+        barChartData = Arrays.asList(
+
+                new HashMap<String,List<Map<String,Object>>>(){{
+                    put("seriesA",Arrays.asList(
+                            map
+                    ));
+                }}
+
+        );
+        String barChartResponse = objectMapper.writeValueAsString(barChartData);
+
+
+        System.out.println(barChartResponse);
+
     }
 
 
