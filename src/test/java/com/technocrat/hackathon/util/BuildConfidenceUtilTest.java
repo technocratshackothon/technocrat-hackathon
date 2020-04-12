@@ -47,16 +47,18 @@ public class BuildConfidenceUtilTest {
         Map<String,Object> map = new HashMap<>();
 
         map.put("Delivery",80);
+        barMapList.add(map);
+        map.clear();
         map.put("Test Converage",60);
+        barMapList.add(map);
+        map.clear();
         map.put("Defects",100);
         barMapList.add(map);
         barMap.put("seriesA",barMapList);
         barChartData = Arrays.asList(
 
                 new HashMap<String,List<Map<String,Object>>>(){{
-                    put("seriesA",Arrays.asList(
-                            map
-                    ));
+                    put("seriesA",barMapList);
                 }}
 
         );

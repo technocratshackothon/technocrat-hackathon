@@ -35,14 +35,12 @@ public class JiraService {
                 releaseReportUrl
                 , "", ReleaseReport.class, HttpMethod.GET);
         String confidenceRate = BuildConfidenceUtil.fetchConfidenceIndex(releaseReport);
-        Map<String,Object> confidenceMap = BuildConfidenceUtil.mapOfParameterAndConfidence;
+        List<Map<String,Object>> listOfConfidenceMap = BuildConfidenceUtil.listOfMapOfParameterAndConfidence;
         List<Map<String,List<Map<String,Object>>>> barChartData =
         Arrays.asList(
 
                 new HashMap<String,List<Map<String,Object>>>(){{
-                    put("seriesA",Arrays.asList(
-                            BuildConfidenceUtil.mapOfParameterAndConfidence
-                    ));
+                    put("seriesA",listOfConfidenceMap);
                 }}
 
         );
