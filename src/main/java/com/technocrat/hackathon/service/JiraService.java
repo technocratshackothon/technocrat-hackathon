@@ -44,7 +44,8 @@ public class JiraService {
                 }}
 
         );
-        UiResponse uiResponse = UiResponse.builder().confidencePercentage(Integer.parseInt(confidenceRate)).barChartData(barChartData).build();
+        boolean isCurentRelease = confidenceRate.equalsIgnoreCase("100");
+        UiResponse uiResponse = UiResponse.builder().confidencePercentage(Integer.parseInt(confidenceRate)).currentRelease(isCurentRelease).barChartData(barChartData).build();
         return uiResponse;
     }
 

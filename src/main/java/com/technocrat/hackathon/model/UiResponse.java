@@ -23,7 +23,7 @@ public class UiResponse {
 
     private int confidencePercentage;
 
-    private Boolean currentRelease;
+    private Boolean currentRelease = false;
 
     private List<Application> applicationList;
 
