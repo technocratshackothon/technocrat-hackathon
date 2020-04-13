@@ -40,7 +40,7 @@ public class JiraService {
         Arrays.asList(
 
                 new HashMap<String,List<Map<String,Object>>>(){{
-                    put("seriesA",listOfConfidenceMap);
+                    put(releaseversion,listOfConfidenceMap);
                 }}
 
         );
